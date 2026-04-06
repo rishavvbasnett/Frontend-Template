@@ -1,24 +1,25 @@
 {
-  "name": "Project 11: To-do List",
+  "name": "frontend-template",
   "version": "1.0.0",
-  "description": "Project 10: A Restaurant Page",
+  "description": "Reusable frontend template with Webpack, assets handling and GitHub Pages deployment",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "webpack serve --open"
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rishavvbasnett/Restaurant-Page.git"
+    "url": ""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rishavvbasnett/Restaurant-Page/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/rishavvbasnett/Restaurant-Page#readme",
+  "homepage": "",
   "devDependencies": {
     "css-loader": "^7.1.4",
     "gh-pages": "^6.3.0",

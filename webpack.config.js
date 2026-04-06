@@ -1,14 +1,19 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
-    mode: "development",
+module.exports = (env, argv) => ({
+    mode: argv.mode || "development",
+
     entry: "./src/index.js",
+
     output: {
         filename: "main.js",
         path: path.resolve(__dirname, "dist"),
         clean: true
     },
+
+    devtool: argv.mode === "development" ? "eval-source-map" : false,
+
     module: {
         rules: [
             {
@@ -28,19 +33,20 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resource',
+                type: "asset/resource",
                 generator: {
-                    filename: 'fonts/[name].[ext]',
+                    filename: "fonts/[name][ext]"
                 }
-            },
-
+            }
         ]
     },
+
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html"
         })
     ],
+
     devServer: {
         static: path.resolve(__dirname, "dist"),
         hot: false,
@@ -48,4 +54,4 @@ module.exports = {
         open: true,
         watchFiles: ["src/**/*.html"]
     }
-};
+});

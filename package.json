@@ -1,0 +1,35 @@
+{
+  "name": "Project 11: To-do List",
+  "version": "1.0.0",
+  "description": "Project 10: A Restaurant Page",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishavvbasnett/Restaurant-Page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishavvbasnett/Restaurant-Page/issues"
+  },
+  "homepage": "https://github.com/rishavvbasnett/Restaurant-Page#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.4",
+    "gh-pages": "^6.3.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.6",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.3"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
+}

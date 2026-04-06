@@ -1,0 +1,260 @@
+/* Outermost div content */
+body.projects #content {
+    background-color: var(--main-bg);
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 1.7rem + 1vw, 3rem);
+    background: transparent;
+    padding: 2.5rem 0;
+}
+
+/* page Title */
+.pageTitle {
+    color: var(--text);
+    min-height: 40px;
+    text-align: center;
+    min-height: fit-content;
+    color: black;
+    font-weight: 600;
+    font-size: clamp(1.3rem, 1.1rem + 1.5vw, 1.7rem);
+    letter-spacing: 0.9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* New project button */
+.newProjectBtn {
+    align-self: center;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+
+    background-color: rgb(var(--main-blue));
+    color: white;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition:
+        transform 0.2s ease;
+    box-shadow: 0.2 ease;
+}
+
+.newProjectBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgb(12, 12, 12, 0.15);
+}
+
+/* BOX to show project lists */
+.projectListBox {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: fit-content;
+    min-height: 250px;
+}
+
+/* The project Cards */
+.projectDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+
+    position: relative;
+    background-color: #e0e1ea;
+    color: var(--text);
+
+    transition:
+        transform 0.22s ease,
+        width 0.22s ease;
+
+    border-radius: 12px;
+}
+
+.projectDiv::before {
+    content: "";
+    height: 100%;
+    width: 10px;
+    border-radius: 12px 0 0 12px;
+    background-color: rgb(var(--main-blue));
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.2s ease;
+}
+
+.projectDiv:hover::before {
+    width: 21px;
+}
+
+.projectDiv:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* logo Div for the svg */
+.projectDiv__logos {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.projectDiv__button {
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+    line-height: 8px;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.15s ease;
+    ;
+}
+
+.projectDiv__button:hover {
+    transform: translateY(-2px);
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.projectDiv:hover .projectDiv__title {
+    transform: translateX(0.8rem);
+}
+
+.projectDiv__button>svg {
+    background-color: transparent;
+    height: clamp(24px, 24px + 0.8vw, 27px);
+    width: clamp(24px, 24px + 0.8vw, 27px);
+    stroke-width: 1.5px;
+    stroke: black;
+    fill: none;
+
+    transition: stroke 0.13s ease;
+}
+
+.projectDiv__button--edit:hover .projectDiv__svg--edit {
+    stroke: blue;
+}
+
+.projectDiv__button--delete:hover .projectDiv__svg--delete {
+    stroke: red;
+}
+
+/* project Title */
+.projectDiv__title {
+    font-weight: 600;
+    font-size: clamp(1.1rem, 1.14rem + 0.2vw, 1.4rem);
+    transition: transform 0.2s ease;
+}
+
+
+/* New Project Dialog Box */
+.newProject:modal {
+    min-height: max-content;
+    min-width: fit-content;
+    padding: 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.newProject::backdrop {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
+}
+
+.newProjectForm>* {
+    width: 100%;
+    font-weight: 400;
+}
+
+/* New Project Form */
+.newProjectForm {
+    width: clamp(300px, 290px + 3vw, 420px);
+    height: clamp(430px, 410px + 3vw, 500px);
+    padding: clamp(2.7rem, 2.5rem + 2vw, 3rem) clamp(1rem, 1rem + 2vw, 1.7rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+.newProjectForm>.headingProjectForm {
+    position: relative;
+    font-size: 1.6rem;
+    text-align: center;
+    min-height: fit-content;
+    color: black;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 1rem + 4vw, 1.8rem);
+    letter-spacing: 0.7px;
+    margin-bottom: 2rem;
+}
+
+.headingProjectForm::after {
+    position: absolute;
+    content: "";
+    border-bottom: 1px solid #e5e7f0;
+    left: 50%;
+    width: 190px;
+    bottom: 0;
+    border-radius: 2px;
+    transform: translateX(-50%);
+}
+
+.newProjectForm button {
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.58rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.newProjectForm>.addBtn {
+    background-color: rgb(var(--main-blue));
+    color: white;
+    position: relative;
+    top: clamp(23px, 20px + 2vw, 30px);
+}
+
+.newProjectForm>.backBtn {
+    background-color: #f1f3f9;
+    border: 1px solid #d0d4e4;
+    color: #444;
+    position: relative;
+    top: clamp(16px, 13px + 2vw, 18px);
+}
+
+.newProjectForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 9px rgba(60, 155, 255, 0.3);
+}
+
+.newProjectForm>input {
+    padding: 1.4rem 0.8rem;
+    border: 1px solid #d0d4e4;
+    background-color: #f6f6f7;
+    outline: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border 0.15 ease, box-shadow 0.15 ease;
+    height: clamp(1.5rem, 1.3rem + 5vw, 2.5rem);
+}
+
+.newProjectForm input:focus {
+    border: 1px solid rgb(var(--main-blue));
+    box-shadow: 0 0 3px 3px rgba(91, 141, 239, 0.15);
+    background: white;
+}

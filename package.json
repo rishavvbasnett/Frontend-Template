@@ -9,7 +9,11 @@
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,jsx,ts,css,html,json}": "prettier --write"
   },
   "repository": {
     "type": "git",
@@ -26,10 +30,14 @@
     "@eslint/js": "^10.0.1",
     "css-loader": "^7.1.4",
     "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
     "gh-pages": "^6.3.0",
     "globals": "^17.4.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
     "style-loader": "^4.0.0",
     "webpack": "^5.105.4",
     "webpack-cli": "^6.0.1",

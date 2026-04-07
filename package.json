@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./"
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
